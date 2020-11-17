@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "rgba(30,144,255,0.2)",
   },
 
   title: {
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
 
   input: {
     width: "80%",
-    backgroundColor: "#ddd",
+    backgroundColor: "#fff",
     height: 55,
     marginVertical: 10,
     paddingHorizontal: 20,

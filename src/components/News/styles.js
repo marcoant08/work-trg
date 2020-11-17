@@ -36,6 +36,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
   },
+
+  deleteContainer: {
+    borderTopWidth: 0.5,
+    borderTopColor: "#bbb",
+    paddingVertical: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
 
 export default styles;

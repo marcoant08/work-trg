@@ -61,7 +61,7 @@ export default function SignUp() {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.7}
-        onPress={() => criar(name, username, email, password)}
+        onPress={() => criar(name, username, email, password, level)}
       >
         <Text style={styles.textButton}>Criar</Text>
       </TouchableOpacity>

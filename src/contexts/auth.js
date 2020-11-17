@@ -11,7 +11,7 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     async function load() {
-      await AsyncStorage.getItem("@icheff:usuario")
+      await AsyncStorage.getItem("@trabai:usuario")
         .then((resp) => {
           setUsuario(JSON.parse(resp));
         })
