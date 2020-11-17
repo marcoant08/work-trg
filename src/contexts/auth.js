@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 import { Alert, ToastAndroid } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import api from "../services/api";
+import { useNavigation } from "@react-navigation/native";
 
 export const AuthContext = createContext({});
 
@@ -23,8 +24,14 @@ function AuthProvider({ children }) {
   }, []);
 
   async function acessar(email, password) {
-    api.post("Login", { email, password }).then((response) => {
+    api.post("Login", { email, password }).then(async (response) => {
+      console.log(response);
       ToastAndroid.show("Logado com sucesso.", ToastAndroid.SHORT);
+      await AsyncStorage.setItem(
+        "@trabai:usuario",
+        JSON.stringify(response.data.user)
+      );
+      setUsuario(response.data.user);
     });
   }
 
@@ -36,8 +43,13 @@ function AuthProvider({ children }) {
 
     api
       .post("SignUp", { name, username, email, password, level })
-      .then((response) => {
+      .then(async (response) => {
         ToastAndroid.show("Usuário criado com sucesso.", ToastAndroid.SHORT);
+        await AsyncStorage.setItem(
+          "@trabai:usuario",
+          JSON.stringify(response.data.user)
+        );
+        setUsuario(response.data.user);
       })
       .catch((err) => console.log(err));
     //setUsuario(null);

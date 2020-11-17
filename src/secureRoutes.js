@@ -7,13 +7,13 @@ import CriarNews from "./pages/CriarNews";
 
 const MyStack = createStackNavigator();
 
-function Routes() {
+function SecureRoutes() {
   return (
     <MyStack.Navigator screenOptions={{ headerShown: false }}>
-      <MyStack.Screen name="Login" component={Login} />
-      <MyStack.Screen name="SignUp" component={SignUp} />
+      <MyStack.Screen name="Home" component={Home} />
+      <MyStack.Screen name="CriarNews" component={CriarNews} />
     </MyStack.Navigator>
   );
 }
 
-export default Routes;
+export default SecureRoutes;
