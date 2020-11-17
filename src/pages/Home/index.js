@@ -90,7 +90,7 @@ export default function Home() {
         )}
         keyExtractor={(item) => String(item.newsId)}
       />
-      {usuario.level === "admin" && (
+      {usuario.level === "Escritor" && (
         <TouchableWithoutFeedback
           style={styles.button}
           activeOpacity={0.8}

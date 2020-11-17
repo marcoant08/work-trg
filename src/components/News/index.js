@@ -18,10 +18,10 @@ export default function News(props) {
         <Text style={styles.text}>{text}</Text>
       </View>
 
-      {usuario.level === "admin" && (
+      {usuario.level === "Escritor" && (
         <View style={styles.deleteContainer}>
           <TouchableOpacity onPress={onDelete}>
-            <MaterialCommunityIcons name="delete" size={35} color="#f00" />
+            <MaterialCommunityIcons name="delete" size={35} color="#CD3333" />
           </TouchableOpacity>
         </View>
       )}

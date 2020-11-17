@@ -9,7 +9,7 @@ export default function SignUp() {
   const [username, setUseranme] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [level, setLevel] = useState("user");
+  const [level, setLevel] = useState("Leitor");
   const { criar } = useContext(AuthContext);
 
   return (
@@ -54,8 +54,8 @@ export default function SignUp() {
         style={{ height: 50, width: 150 }}
         onValueChange={(itemValue, itemIndex) => setLevel(itemValue)}
       >
-        <Picker.Item label="User" value="user" />
-        <Picker.Item label="Admin" value="admin" />
+        <Picker.Item label="Leitor" value="Leitor" />
+        <Picker.Item label="Escritor" value="Escritor" />
       </Picker>
 
       <TouchableOpacity
