@@ -24,15 +24,21 @@ function AuthProvider({ children }) {
   }, []);
 
   async function acessar(email, password) {
-    api.post("Login", { email, password }).then(async (response) => {
-      console.log(response);
-      ToastAndroid.show("Logado com sucesso.", ToastAndroid.SHORT);
-      await AsyncStorage.setItem(
-        "@trabai:usuario",
-        JSON.stringify(response.data.user)
-      );
-      setUsuario(response.data.user);
-    });
+    api
+      .post("Login", { email, password })
+      .then(async (response) => {
+        console.log(response);
+        ToastAndroid.show("Logado com sucesso.", ToastAndroid.SHORT);
+        await AsyncStorage.setItem(
+          "@trabai:usuario",
+          JSON.stringify(response.data.user)
+        );
+        setUsuario(response.data.user);
+      })
+      .catch((err) => {
+        ToastAndroid.show("Algo deu errado", ToastAndroid.SHORT);
+        console.log(err);
+      });
   }
 
   async function criar(name, username, email, password, level) {
@@ -51,7 +57,10 @@ function AuthProvider({ children }) {
         );
         setUsuario(response.data.user);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        ToastAndroid.show("Algo deu errado", ToastAndroid.SHORT);
+        console.log(err);
+      });
     //setUsuario(null);
   }
 

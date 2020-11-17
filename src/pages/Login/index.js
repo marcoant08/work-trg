@@ -26,7 +26,7 @@ export default function Login() {
         style={styles.input}
         value={password}
         onChangeText={setPassword}
-        secureTextEntry={true}
+        secureTextEntry
       />
 
       <TouchableOpacity
