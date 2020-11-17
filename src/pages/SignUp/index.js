@@ -18,7 +18,6 @@ export default function SignUp() {
 
       <TextInput
         placeholder="Nome"
-        multiline
         style={styles.input}
         value={name}
         onChangeText={setName}
@@ -26,7 +25,6 @@ export default function SignUp() {
 
       <TextInput
         placeholder="Username"
-        multiline
         style={styles.input}
         value={username}
         onChangeText={setUseranme}
@@ -34,7 +32,6 @@ export default function SignUp() {
 
       <TextInput
         placeholder="E-mail"
-        multiline
         style={styles.input}
         value={email}
         onChangeText={setEmail}
@@ -42,7 +39,6 @@ export default function SignUp() {
 
       <TextInput
         placeholder="Senha"
-        multiline
         style={styles.input}
         value={password}
         onChangeText={setPassword}

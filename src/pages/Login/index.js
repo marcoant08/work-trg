@@ -16,7 +16,6 @@ export default function Login() {
 
       <TextInput
         placeholder="E-mail"
-        multiline
         style={styles.input}
         value={email}
         onChangeText={setEmail}
@@ -24,7 +23,6 @@ export default function Login() {
 
       <TextInput
         placeholder="Senha"
-        multiline
         style={styles.input}
         value={password}
         onChangeText={setPassword}
